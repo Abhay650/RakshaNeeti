@@ -1,0 +1,52 @@
+Index: app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.py b/test.py
+rename from app.py
+rename to test.py
+--- a/app.py	(revision 0301468b59556887d149c2bebc828c4833a734e8)
++++ b/test.py	(date 1746180176496)
+@@ -92,39 +92,9 @@
+     state = st.selectbox("📍 Which state are you from?", sorted(df['State/National'].unique()))
+     income_level = st.selectbox("💰 What's your family's income category?", ['Low', 'Middle', 'High', 'Unknown'])
+ 
+-    st.caption("Optional: Paste eligibility text from a government form or record your voice")
+-
+-    # --- Voice Recorder Widget ---
+-    import io
+-    import speech_recognition as sr
+-    from audio_recorder_streamlit import audio_recorder as voice_input_recorder
+-
+-    audio_bytes = voice_input_recorder("🎙️ Record your eligibility criteria here",  energy_threshold=4000, pause_threshold=1.0, sample_rate=16000)
+-
+-    elig_text = ""
++    st.caption("Optional: Paste eligibility text from a government form")
++    elig_text = st.text_area("📋 Paste eligibility text (optional)", height=100)
+ 
+-    if audio_bytes is not None:
+-        recognizer = sr.Recognizer()
+-        audio_file = io.BytesIO(audio_bytes)
+-
+-        with sr.AudioFile(audio_file) as source:
+-            audio_data = recognizer.record(source)
+-
+-        try:
+-            elig_text = recognizer.recognize_google(audio_data)
+-            st.success(f"🎉 Recognized eligibility text: {elig_text}")
+-            detected_level = extract_income_level(elig_text)
+-            st.markdown(f"🔍 Detected income level: **{detected_level}**")
+-            income_level = detected_level
+-        except sr.UnknownValueError:
+-            st.warning("⚠️ Sorry, could not understand the audio.")
+-        except sr.RequestError as e:
+-            st.warning(f"⚠️ Could not request results; {e}")
+-
+-    # Text area (prefilled if voice recognized)
+-    elig_text = st.text_area("📋 Paste or edit eligibility text", value=elig_text, height=100)
+-
+-    # Update income level if user edits text manually
+     if elig_text.strip():
+         detected_level = extract_income_level(elig_text)
+         st.markdown(f"🔍 Detected income level: **{detected_level}**")

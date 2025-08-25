@@ -1,0 +1,2 @@
+[console_scripts]
+record-audio = audio_recorder.main:record_audio

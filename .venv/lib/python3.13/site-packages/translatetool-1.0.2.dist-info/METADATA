@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: translatetool
+Version: 1.0.2
+Summary: A Papago Translate module.
+Home-page: https://github.com/jaewoolee82/translatetool
+Author: Jaewoo Lee
+Author-email: jaewoolee82@kakao.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+
+# translatetool
+A Papago Translate module.
+
+## Download
+```pip install translatetool```
+
+## Example
+
+```py
+import translatetool
+import asyncio
+
+
+async def runit():
+    add = translatetool.translate("Papago Client ID", "Papago Client Secret") # https://developers.naver.com/ 에서 발급
+    add1 = await add.translate("ko", "en", "안녕하세요, 테스트 입니다.") # 언어: ko, en, ja, zh-CN, zh-TW, vi, id, th, de, ru, es, it, fr
+    print(add1)
+
+
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+asyncio.run(runit())
+```
+
+## Language List
+![](https://i.ibb.co/d2Fcs2B/image1.png)
+

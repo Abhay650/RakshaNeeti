@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: audio-recorder-1
+Version: 0.1.0
+Summary: A simple audio recording library.
+Home-page: https://github.com/yourusername/audio_recorder
+Author: Your Name
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: sounddevice
+Requires-Dist: numpy
+
+# README.md
+# Audio Recorder
+
+This is a simple Python library for recording audio and saving it as a WAV file.
