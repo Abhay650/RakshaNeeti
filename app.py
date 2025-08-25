@@ -64,6 +64,7 @@ def train_model(df: pd.DataFrame):
     accuracy = accuracy_score(y_test, model.predict(X_test))
     return model, state_encoder, income_encoder, scheme_encoder, accuracy
 
+
 # --- Step 5: Translate text using GoogleTranslator ---
 def translate_text(text, target_lang_code):
     try:
