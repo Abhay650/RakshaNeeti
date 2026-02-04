@@ -1,0 +1,53 @@
+# --------------------
+# Virtual Environment
+# --------------------
+.venv/
+venv/
+ENV/
+env/
+
+# --------------------
+# Python cache / build
+# --------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
+
+# --------------------
+# IDE / Editor files
+# --------------------
+.idea/
+.vscode/
+*.iml
+Open_CV.PythonProject
+
+# --------------------
+# OS files
+# --------------------
+.DS_Store
+Thumbs.db
+
+# --------------------
+# Data / local artifacts (from your project)
+# --------------------
+*.numbers
+extracted_bills (1).numbers
+merged_scheme2.csv
+
+# --------------------
+# Audio / temp files (you use audio libs)
+# --------------------
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# --------------------
+# Logs
+# --------------------
+*.log
+
